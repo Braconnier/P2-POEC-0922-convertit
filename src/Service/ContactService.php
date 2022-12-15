@@ -20,21 +20,21 @@ class ContactService
             <h4>
             Exp. " . $form->get('pseudo')->getData() . ".
             </h4>
-            <h5>email: " . $form->getViewData()['email'] . " :
+            <h5>email: " . $form->get('email')->getData() . " :
             </h5>
         </div>
         <div>
             <h4>
             Message :
             </h4>
-            <p>" . $form->getViewData()['message'] . "
+            <p>" . $form->get('message')->getData() . "
             </p>
         </div>
     </div>";
         $email = (new Email())
-            ->from($form->getViewData()['email'])
+            ->from($form->get('email')->getData())
             ->to($this->mailerFrom)
-            ->subject($form->getViewData()['subject'])
+            ->subject($form->get('subject')->getData())
             ->html($html);
 
         $this->mailer->send($email);

@@ -2,7 +2,7 @@
 
 {% block body %}
 	<div class="w-100 text-center">
-		<h1>Bienvenue sur ConvertIt!
+		<h1 class="my-5">Bienvenue sur ConvertIt!
 			{% if app.user %}
 				<img src="{{profilePicturePath ?? ''}}{{app.user.profilePicture ?? ''}}" alt="{{app.user.pseudo ?? ''}}" width='60' height='60' class="">
 				{{app.user.pseudo ?? ''}}
@@ -21,7 +21,7 @@
 					<p>Ici, vous pourrez convertir vos images en png, jpg ou webp et les partager librement avec la communauté</p>
 				</div>
 				<div>
-					<h1>convertir votre image</h1>
+					<h3>convertir votre image</h3>
 					{% if app.user %}
 						<div>{% include "pages/home/_form.html.twig" %}</div>
 					{% else %}
@@ -33,31 +33,25 @@
 					{% endif %}
 				</div>
 			</section>
-			<section class="w-50 bloc how mx-4  text-start">
+			<section class="w-50 bloc how mx-4 d-flex flex-column align-items-start text-start">
 				<h3>Comment Convertir</h3>
-				<ul class="">
+				<ol class="">
 					<li>
 						<div class="d-inline-flex">
-							<p class="mx-2">1
-								<div>Connectez vous pour convertir vos images preferées</div>
-							</p>
+							<p class="mx-2">Connectez vous pour convertir vos images preferées</p>
 						</div>
 					</li>
 					<li>
 						<div class="d-inline-flex">
-							<p class="mx-2">2
-								<div>Remplissez tout les champs necessaires</div>
-							</p>
+							<p class="mx-2">Remplissez tout les champs necessaires</p>
 						</div>
 					</li>
 					<li>
 						<div class="d-inline-flex">
-							<p class="mx-2">3
-								<div>Cliquez sur Convert et consultez vos images</div>
-							</p>
+							<p class="mx-2">Cliquez sur Convert et consultez vos images</p>
 						</div>
 					</li>
-				</ul>
+				</ol>
 			</section>
 		</div>
 	</div>
